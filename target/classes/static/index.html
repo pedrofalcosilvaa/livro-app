@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Biblioteca - Livros</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Biblioteca</h1>
+    <p>Gerencie livros — CRUD completo com Spring Boot & H2</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Adicionar / Atualizar Livro</h2>
+      <form id="formLivro">
+        <input type="hidden" id="livroId">
+        <label>Título <span class="required">*</span>
+          <input id="titulo" maxlength="40" required>
+        </label>
+        <label>Quantidade de páginas <span class="required">*</span>
+          <input id="qtdPaginas" type="number" min="1" required>
+        </label>
+        <fieldset>
+          <legend>Publicação</legend>
+          <label>Autor <span class="required">*</span>
+            <input id="autor" maxlength="25" required>
+          </label>
+          <label>Data de publicação
+            <input id="dataPublicacao" type="date">
+          </label>
+          <label>Editora
+            <input id="editora">
+          </label>
+        </fieldset>
+        <div class="actions">
+          <button type="submit">Salvar</button>
+          <button type="button" id="limpar">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Lista de Livros</h2>
+      <div id="mensagem" class="mensagem"></div>
+      <table id="tabelaLivros">
+        <thead><tr><th>ID</th><th>Título</th><th>Páginas</th><th>Autor</th><th>Data</th><th>Editora</th><th>Ações</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>API: <code>/livros</code> • H2 console: <code>/h2-console</code></p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
